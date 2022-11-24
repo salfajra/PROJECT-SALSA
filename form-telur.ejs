@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header" style="background-color:#ff9c4a ;">
+            <h4 fw>Form Telur</h4>
+        </div>
+        <div class="card-body">
+            <form action="<%= targetRoute %>" method="post">
+                Jenis Telur
+                <select name="jenis_telur" class="form-control" required>
+                    <option value="">--Pilih Jenis Telur--</option>
+                    <option value="telur_ayam">Telur Ayam</option>
+                    <option value="telur_bebek">Telur Bebek</option>
+                    <option value="telur_puyuh">Telur Puyuh</option>
+                    <option value="telur_asin">Telur Asin</option>
+                </select>
+
+                <!-- using js DOM to set default value of "jenis telur" -->
+                <script>
+                    document.querySelector('select[name="jenis_telur"]').value = "<%= jenis_telur %>"
+                </script>
+
+                Stok
+                <input type="number" name="stok" id="stok" class="form-control" value="<%= stok %>" required />
+
+                Harga
+                <input type="number" name="harga" id="harga" class="form-control" value="<%= harga %>" required />
+
+                <button type="submit" class="btn btn-success mt-2">
+                    Simpan
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
